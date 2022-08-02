@@ -1,0 +1,156 @@
+body {margin:0;
+    background-color: #edc7b7;
+  font-family:Verdana, sans-serif;
+}
+
+ul {
+  list-style-type: none;
+  margin-right:10px;
+  padding:0;
+  overflow: hidden;
+  background-color: #123c69;
+  top: 100px;
+  width: 100%;
+}
+.head{
+    text-align: center;
+    background-color: #edc7b7;
+    font-family: 'Festive', cursive;
+    font-size: 35px;
+    padding: 0%;
+    margin-bottom: 0%;
+}
+.header{
+margin-left: 30px;
+text-align: center;
+}
+.sidebar {
+margin: 0;
+padding: 0;
+width: 120px;
+background-color: #123c69;;
+position: fixed;
+height:300px;
+overflow: hidden;
+}
+
+.sidebar a {
+display: block;
+color: white;
+padding: 16px;
+text-decoration: none;
+}
+
+.sidebar a.active {
+background-color: #ac3b61;
+color: white;
+}
+
+.sidebar a:hover:not(.active) {
+background-color: #111;
+color: white;
+}
+
+div.content {
+margin-left: 200px;
+margin-right: 100px;
+padding: 1px 16px;
+height: fit-content;
+padding-bottom: 100px;
+}
+
+@media screen and (max-width: 700px) {
+.sidebar {
+width: 100%;
+height: auto;
+position: fixed;
+}
+.sidebar a {float: left;}
+div.content {margin-left: 0;}
+}
+
+@media screen and (max-width: 400px) {
+.sidebar a {
+text-align: center;
+float: none;
+position: fixed;
+}
+}
+
+
+li {
+  float:left;
+}
+
+li a {
+    
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color:#ac3b61;
+}
+.solnbtn , .btn{
+padding: .5rem 1rem;
+outline:none;
+font-size: 20px;
+font-size: 50;
+
+margin-top: 40px;
+border: none;
+text-transform: uppercase;
+color: #EDC7B7;
+background-color: #ac3b61;
+}
+
+.solnbtn:hover{
+background-color: 	 #111;
+}
+#solution{
+display: block;
+visibility:hidden;
+size: relative;
+margin-left: 200px;
+margin-right: 100px;
+padding: 1px 16px;
+height: fit-content;
+padding-bottom: 100px;
+}
+.copyButton{
+  padding: .5rem 1rem;
+  outline:none;
+  font-size: 20px;
+  font-size: 50;
+  
+  margin-top: 40px;
+  border: none;
+  text-transform: uppercase;
+  color: #EDC7B7;
+  background-color: #123c69;
+  }
+  
+  .copyButton:hover{
+  background-color: 	 #111;
+  }
+
+.alert{
+  position: absolute;
+  margin: auto;
+  background-color: black;
+  color: white;
+  padding: 10px 0;;
+  font-size: 16px;
+  text-align: center;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+}

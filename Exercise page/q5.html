@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head><title>Exercise</title></head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Festive&display=swap" rel="stylesheet">
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <link rel = "stylesheet" href = "exercise.css">
+  <style>
+      .copyButton{
+  padding: .5rem 1rem;
+  outline:none;
+  font-size: 20px;
+  font-size: 50;
+  
+  margin-top: 40px;
+  border: none;
+  text-transform: uppercase;
+  color: #EDC7B7;
+  background-color: #123c69;
+  }
+  
+  .copyButton:hover{
+  background-color: 	 #111;
+  }
+
+.alert{
+  position: absolute;
+  margin: auto;
+  background-color: black;
+  color: white;
+  padding: 10px 0;;
+  font-size: 16px;
+  text-align: center;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+}
+  </style>
+
+    <body>
+    <div class="head">
+        <h1>Aprender</h1></div>
+   
+
+<ul>
+  
+  <li><a href="index.html">Home</a></li>
+  <li><a href="learn.html">Learn</a></li>
+  <li><a href="books.html">Books</a></li>
+  <li><a href="workout.html">Work out</a></li>
+  <li><a class = "active" href="exercise.html">Exercise</a></li>
+  <li><a href="login.jsp">Quiz</a></li>
+</ul>
+<div class="sidebar">
+    <a href="exercise.html">Q1</a>
+    <a href="q2.html">Q2</a>
+    <a href="q3.html">Q3</a>
+    <a  href="q4.html">Q4</a>
+    <a class = "active"href="q5.html">Q5</a>
+    <a href="q6.html">Q6</a>
+  </div>
+  <div class="content" style="background-color: #eee2dc;">
+    <h3 class="header"><b><u>Questions of the Week!</u></b><br><br> 
+        Solve the questions using our online editor!
+      </h3>
+    <h2>Write a JavaScript that accepts few digits and generates the largest and smallest number using it. If both the numbers are even, then it should display the message numbers generated are even. If both the numbers are odd, then it should display numbers generated are odd. Otherwise, it should display the numbers are different.</h2>
+    <div>
+        <button class = "solnbtn" onclick = "myFunction()">Solution</button>
+        <button class = "copyButton" id = "copyButton">Copy</button>
+        <span class = "alert">Copied!</span>
+    </div>
+    
+    
+</div>  
+<div id = "solution" class = "solution">
+  <h3>Solution:</h3>
+  <xmp id = "text">
+    <DOCTYPE html>
+        <head>
+            <title>Largest and Smallest number</title>
+        </head>
+        <body style="margin-top : 50px; margin-left : 50px;">
+            <h1>Finding Largest and Smallest Numbers</h1>
+            <div style="width: 50%; border-style: solid; padding: 50px;">
+            <input type = "number" placeholder="enter 1st digit" id = "1">
+            <input type = "number" placeholder="enter 2nd digit" id = "2">
+            <input type = "number" placeholder="enter 3rd digit" id = "3">
+            <input type = "number" placeholder="enter 4rth digit" id = "4">
+            <button onclick="result()">Result</button>
+            <p>The given set of four digits : </p>
+            <p id = "num"></p>
+            <p>Largest number from the digits : </p>
+            <p id = "lar"></p>
+            <p>Smallest number from the digits :</p>
+            <p id = "sm"></p>
+            <p id = "ans"></p>
+            </div>
+            <script>
+                function result(){
+                let arr = [0,0,0,0];
+                arr[0] = document.getElementById("1").value;
+                arr[1] = document.getElementById("2").value;
+                arr[2] = document.getElementById("3").value;
+                arr[3] = document.getElementById("4").value;
+                document.getElementById("num").innerHTML = arr.join(",");
+                arr.sort(function(a, b){return a - b});
+                let arr2 = ""+arr[0]+arr[1]+arr[2]+arr[3];
+                document.getElementById("sm").innerHTML = arr.join("");
+                arr.sort(function(a, b){return b - a});
+                let arr3 = ""+arr[0]+arr[1]+arr[2]+arr[3];
+                document.getElementById("lar").innerHTML = arr.join("");
+                let num1 = arr2.valueOf();
+                let num2 = arr3.valueOf();
+                if(num1%2==0 & num2%2==0){
+                document.getElementById("ans").innerHTML = "Both even";
+                }
+                else if(num1%2==1 & num2%2==1){
+                document.getElementById("ans").innerHTML = "Both odd";
+                }
+                else{
+                    document.getElementById("ans").innerHTML = "Numbers are different";
+                }
+                }
+            </script>
+        </body>
+  </xmp>
+</div>
+<script>
+    function myFunction(){
+      var element = document.getElementById("solution");
+      var cStyle = getComputedStyle(element);
+      var visibility = cStyle.getPropertyValue("visibility");  
+      
+      if(visibility === "hidden"){
+        element.style.visibility = "visible";
+        element.style.backgroundColor = "#eee2dc";
+      }
+      if(visibility === "visible"){
+        element.style.visibility = "hidden";
+        element.style.backgroundColor = "#edc7b7";
+      }
+}
+function copy(copyId){
+    var $inp=$("<input>");
+    $("body").append($inp);
+    $inp.val($(""+copyId).text()).select();
+    document.execCommand("copy");
+    $inp.remove();
+    $(".alert").fadeIn(500,function(){
+      $(".alert").fadeOut();
+    });
+  }
+  $(document).ready(function(){
+    $("#copyButton").click(function(){
+      copy("#text");
+    });
+
+  });
+</script>
+</body>

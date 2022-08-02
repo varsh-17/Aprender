@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head><title>Exercise</title></head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Festive&display=swap" rel="stylesheet">
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <link rel = "stylesheet" href = "exercise.css">
+  <style>
+      .copyButton{
+  padding: .5rem 1rem;
+  outline:none;
+  font-size: 20px;
+  font-size: 50;
+  
+  margin-top: 40px;
+  border: none;
+  text-transform: uppercase;
+  color: #EDC7B7;
+  background-color: #123c69;
+  }
+  
+  .copyButton:hover{
+  background-color: 	 #111;
+  }
+
+.alert{
+  position: absolute;
+  margin: auto;
+  background-color: black;
+  color: white;
+  padding: 10px 0;;
+  font-size: 16px;
+  text-align: center;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+}
+  </style>
+
+    <body>
+    <div class="head">
+        <h1>Aprender</h1></div>
+   
+
+<ul>
+  
+  <li><a href="index.html">Home</a></li>
+  <li><a href="learn.html">Learn</a></li>
+  <li><a href="books.html">Books</a></li>
+  <li><a href="workout.html">Work out</a></li>
+  <li><a class = "active" href="exercise.html">Exercise</a></li>
+  <li><a href="login.jsp">Quiz</a></li>
+</ul>
+<div class="sidebar">
+    <a href="exercise.html">Q1</a>
+    <a href="q2.html">Q2</a>
+    <a href="q3.html">Q3</a>
+    <a class="active" href="q4.html">Q4</a>
+    <a href="q5.html">Q5</a>
+    <a href="q6.html">Q6</a>
+  </div>
+  <div class="content" style="background-color: #eee2dc;">
+    <h3 class="header"><b><u>Questions of the Week!</u></b><br><br> 
+        Solve the questions using our online editor!
+      </h3>
+    <h2>Write a javascript program that accepts the users first name and last name of the user and generates an email with the first three characters of first name and last three characters of last name.</h2>
+    <div>
+        <button class = "solnbtn" onclick = "myFunction()">Solution</button>
+        <button class = "copyButton" id = "copyButton">Copy</button>
+        <span class = "alert">Copied!</span>
+    </div>
+    
+    
+</div>  
+<div id = "solution" class = "solution">
+  <h3>Solution:</h3>
+  <xmp id = "text">
+    <!DOCTYPE html>
+    <head>
+        <title>Email</title>
+    </head>
+    <body style = "margin: 50px;"> 
+        <p>Enter first name : </p>
+        <input type = "text" id="fname"><br><br>
+        <p>Enter last name : </p>
+        <input type = "text" id="lname"><br><br>
+        <button onclick="email()">Generate Email</button>
+        <p id = "gm"></p>
+        <script>
+            function email(){
+                var fname = document.getElementById("fname").value;
+                var lname = document.getElementById("lname").value;
+                let part1 = fname.substring(0,3);
+                let part2 = lname.slice(-3);
+                let gmail = part1+"."+part2+"@gmail.com";
+                document.getElementById("gm").innerHTML = gmail;
+            }
+        </script>
+    </body>
+  </xmp>
+</div>
+<script>
+    function myFunction(){
+      var element = document.getElementById("solution");
+      var cStyle = getComputedStyle(element);
+      var visibility = cStyle.getPropertyValue("visibility");  
+      
+      if(visibility === "hidden"){
+        element.style.visibility = "visible";
+        element.style.backgroundColor = "#eee2dc";
+      }
+      if(visibility === "visible"){
+        element.style.visibility = "hidden";
+        element.style.backgroundColor = "#edc7b7";
+      }
+}
+function copy(copyId){
+    var $inp=$("<input>");
+    $("body").append($inp);
+    $inp.val($(""+copyId).text()).select();
+    document.execCommand("copy");
+    $inp.remove();
+    $(".alert").fadeIn(500,function(){
+      $(".alert").fadeOut();
+    });
+  }
+  $(document).ready(function(){
+    $("#copyButton").click(function(){
+      copy("#text");
+    });
+
+  });
+</script>
+</body>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head><title>Exercise</title></head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Festive&display=swap" rel="stylesheet">
+  <link rel = "stylesheet" href = "exercise.css">
+  <script src ="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <style>
+      .copyButton{
+  padding: .5rem 1rem;
+  outline:none;
+  font-size: 20px;
+  font-size: 50;
+  
+  margin-top: 40px;
+  border: none;
+  text-transform: uppercase;
+  color: #EDC7B7;
+  background-color: #123c69;
+  }
+  
+  .copyButton:hover{
+  background-color: 	 #111;
+  }
+
+.alert{
+  position: absolute;
+  margin: auto;
+  background-color: black;
+  color: white;
+  padding: 10px 0;;
+  font-size: 16px;
+  text-align: center;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+}
+  </style>
+    <body>
+    <div class="head">
+        <h1>Aprender</h1></div>
+   
+
+<ul>
+  
+  <li><a href="index.html">Home</a></li>
+  <li><a href="learn.html">Learn</a></li>
+  <li><a href="books.html">Books</a></li>
+  <li><a href="work.html">Work out</a></li>
+   <li><a class="active" href="exercise.html">Exercise</a></li>
+   <li><a href="login.jsp">Quiz</a></li>
+   <li><a href="feedback.html">Rate</a></li>
+  
+</ul>
+<div class="sidebar">
+    <a class="active" href="exercise.html">Q1</a>
+    <a href="q2.html">Q2</a>
+    <a href="q3.html">Q3</a>
+    <a href="q4.html">Q4</a>
+    <a href="q5.html">Q5</a>
+    <a href="q6.html">Q6</a>
+  </div>
+  <div class="content" style="background-color: #eee2dc;">
+    <h3 class="header"><b><u>Questions of the Week!</u></b><br><br> 
+        Solve the questions using our online editor!
+      </h3>
+    <h2>Write a JavaScript code to display a message when a caps lock and alt key are pressed.</h2>
+    <div>
+        <button class = "solnbtn" onclick = "myFunction()">Solution</button>
+        <button class = "copyButton" id = "copyButton">Copy</button>
+        <span class = "alert">Copied!</span>
+    </div>
+    
+    
+</div>  
+<div id = "solution" class = "solution">
+  <h3>Solution:</h3>
+  <xmp id = "text">
+      <!DOCTYPE html>
+      <head>
+          <title>ALT & CAPSLOCK</title>
+          <style>
+              #text {display:none;color:red}
+          </style>
+      </head>
+      <body bgcolor = "#E1EBEE">
+      <h2>Press a key on the keyboard in the input field to find out if the ALT key was pressed or not.</h2>
+      <input type="text" onkeydown="isKeyPressed(event)" value = "Input field">
+      <p id="ans"></p>
+      <h2>Press the "Caps Lock" key inside the input field.</h2>
+      <input id="myInput" value = "Input field">
+      <p id="text">WARNING! Caps lock is ON.</p>
+      <script>
+      function isKeyPressed(event) {
+        var x = document.getElementById("ans");
+        if (event.altKey) {
+          x.innerHTML = "The ALT key was pressed!";
+        } 
+        else {
+          x.innerHTML = "The ALT key was NOT pressed!";
+        }
+      }
+          var input = document.getElementById("myInput");
+          var text = document.getElementById("text");
+          input.addEventListener("keyup", function(event) {
+          
+          if (event.getModifierState("CapsLock")) {
+              text.style.display = "block";
+            } else {
+              text.style.display = "none"
+            }
+          });
+      </script>
+      </body>
+      </html>
+  </xmp>
+</div>
+<script>
+    function myFunction(){
+      var element = document.getElementById("solution");
+      var cStyle = getComputedStyle(element);
+      var visibility = cStyle.getPropertyValue("visibility");  
+      
+      if(visibility === "hidden"){
+        element.style.visibility = "visible";
+        element.style.backgroundColor = "#eee2dc";
+      }
+      if(visibility === "visible"){
+        element.style.visibility = "hidden";
+        element.style.backgroundColor = "#edc7b7";
+      }
+}
+  function copy(copyId){
+    var $inp=$("<input>");
+    $("body").append($inp);
+    $inp.val($(""+copyId).text()).select();
+    document.execCommand("copy");
+    $inp.remove();
+    $(".alert").fadeIn(500,function(){
+      $(".alert").fadeOut();
+    });
+  }
+  $(document).ready(function(){
+    $("#copyButton").click(function(){
+      copy("#text");
+    });
+
+  });
+   
+</script>
+</body>
