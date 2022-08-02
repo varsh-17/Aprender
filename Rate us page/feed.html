@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head><title>Welcome to Aprender</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Festive&display=swap" rel="stylesheet">
+
+<style>
+body {margin:0;
+    background-color: #edc7b7;
+  font-family:Verdana, sans-serif;
+}
+.container{
+    top: 50%;
+    left : 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    background: #BAB2B5;
+}
+.card{
+    padding: 60px 40px 50px 40px;
+    background : #EEE2Dc;
+    border-radius : 10px;
+}
+.name{
+    border : none;
+    background: transparent;
+    border-bottom : 1px solid navy;
+    padding: 6px;
+    margin-bottom: 20px;
+    color: grey;
+    cursor: default;
+}
+.submit{
+    border-radius: 20px;
+    padding: 10px 20px;
+    background: navy;
+    color: beige;
+    margin-top: 30px;
+    border: none;
+    outline: none;
+    display: block;
+    place-items: center;
+}
+button:hover{
+    background-color: beige;
+}
+.textarea{
+    position: relative;
+    text-transform: capitalize;
+    font-size: 14px;
+    height:70px;
+    width: 100%;
+    margin-top:25px;
+    background: beige;
+    
+}
+#logout a:link, #logout a:visited {
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    background-color: #123C69;
+  }
+  
+#logout a:hover, #logout a:active {
+    background-color: navy;
+  }
+#logout{
+    text-align: right;
+    margin-right: 60px;
+    margin-bottom: 40px;
+}
+</style>
+<body>
+  <div class = "container">
+   
+    <div class = "card">
+      <center><H2 style="font-family: Verdana, Geneva, Tahoma, sans-serif;color: navy;">GIVE US YOUR FEEDBACK</H2></center><br>
+        <form action ="feed">
+          <p>Your occupation:</p>
+          <input type="radio" id="Stud" name="occupation" value="Student">
+          <label for="Stud">Student</label><br>
+          <input type="radio" id="Teach" name="occupation" value="Teacher">
+                <label for="Teach">Teacher</label><br>
+            <input type="radio" id="Professional" name="occupation" value="Professional">
+                <label for="Professional">Professional</label>  <br><br>
+                
+        <input type = "text" placeholder="Describe Your experience" id = "feed" name ="feed" class = "textarea"><br><br><br>
+       
+      
+        <button type="submit" id = "submit" class = "submit">Submit</button>
+        </form>
+    </div>
+</div>
+</body>
