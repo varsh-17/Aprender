@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head><title>CSS-Learn from aprender</title></head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Festive&display=swap" rel="stylesheet">
+
+<style>
+    body {margin:0;
+        background-color: #edc7b7;
+      font-family:Verdana, sans-serif;
+    }
+    
+    ul {
+      list-style-type: none;
+      margin-right:10px;
+      padding:0;
+      overflow: hidden;
+      background-color: #123c69;
+      top: 100px;
+      width: 100%;
+    }
+    .head{
+        text-align: center;
+        background-color: #edc7b7;
+        font-family: 'Festive', cursive;
+        font-size: 35px;
+        padding: 0%;
+        margin-bottom: 0%;
+    }
+    .sidebar {
+  margin: 0;
+  padding: 0;
+  width: 120px;
+  background-color: #123c69;;
+  position: fixed;
+  height:400px;
+  overflow: hidden;
+}
+
+.sidebar a {
+  display: block;
+  color: white;
+  padding: 16px;
+  text-decoration: none;
+}
+ 
+.sidebar a.active {
+  background-color: #ac3b61;
+  color: white;
+}
+
+.sidebar a:hover:not(.active) {
+  background-color: #111;
+  color: white;
+}
+
+div.content {
+  margin-left: 200px;
+  margin-right: 100px;
+  padding: 1px 16px;
+  height: fit-content;
+  padding-bottom: 100px;
+}
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: fixed;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+}
+
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+    position: fixed;
+  }
+}
+    
+    
+    li {
+      float:left;
+    }
+    
+    li a {
+        
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+    
+    li a:hover:not(.active) {
+      background-color: #111;
+    }
+    
+    .active {
+      background-color:#ac3b61;
+    }
+    
+    </style>
+    <body>
+    <div class="head">
+        <h1>Aprender</h1></div>
+   
+
+<ul>
+  
+  <li><a href="index.html">Home</a></li>
+  <li><a class="active"href="learn.html">Learn</a></li>
+  <li><a href="books.html">Books</a></li>
+  <li><a href="work.html">Work out</a></li>
+   <li><a href="exercise.html">Exercise</a></li>
+   <li><a href="login.jsp">Quiz</a></li>
+   <li><a href="feedback.html">Rate</a></li>
+  
+</ul>
+<div class="sidebar">
+    <a  href="learn.html">HTML</a>
+    <a class="active"  href="learncss.html">CSS</a>
+    <a href="learnjs.html">JavaScript</a>
+    <a href="serve.html">Servelets</a>
+    <a href="jsp.html">JSP</a>
+    <a href="jdbc.html">JDBC</a>
+    <a href="compiler.html">Compiler</a>
+
+  </div>
+  <div class="content" style="background-color: #eee2dc;">
+    <p>Cascading Style Sheets, fondly referred to as CSS, is a simple design language intended to simplify the process of making web pages presentable.<br><br>
+
+        CSS handles the look and feel part of a web page.<br><br>Using CSS, you can control the color of the text, the style of fonts, the spacing between paragraphs, how columns are sized and laid out, what background images or colors are used, layout designs,variations in display for different devices and screen sizes as well as a variety of other effects.<br><br><br>
+        CSS saves time<br><br>
+        Pages load faster
+        Easy maintenanceis pssible with css. i.e. To make a global change, simply change the style, and all elements in all the web pages will be updated automatically.<br><br>
+        
+         CSS has a much wider array of attributes and Superior styles to HTML, so you can give a far better look to your HTML page in comparison to HTML attributes.<br><br>
+        
+        Multiple Device Compatibility − Style sheets allow content to be optimized for more than one type of device. By using the same HTML document, different versions of a website can be presented for handheld dev<br><br>
+    <b><u>Sample snippet:</u></b><br><br><br>"p {<br>
+        font-family: verdana;<br>
+        font-size: 20px;<br>
+      }"<br><br>
+      This snippet of style code is used to change font style and font size of the text included inside "p" tag.<br><br>
+    Here, <b>p</b> is the selector<br><br>
+    <b>font-family</b>is  property and <b>verdana</b> is value. property and value, collectively known as <b>declaration</b>
+</p>
+      <b><u>Types of CSS</u></b>
+      <br><br>
+      <b>Inline CSS:</b>Styles sheets that are of type inline refer to information related to the style being functional to the existing HTML element.<br><br>
+     <b><u>Syntax:</u></b> 
+        "(open tag)HTML ELEMENT style="properties: value" .... (close tag)"
+    <br><br><B>Internal CSS:</B>Style sheets that are included in the html file under the style tag, used to style and design the html elements<br><br>
+    <b><u>Syntax:</u></b>
+    "(style)<br>
+    class or html id{<br>
+        declaration;<br>
+        declaration;}"<br><br>
+    <b>External CSS:</b>Style sheets that are written as differents files with .css extension and included in the html file using the link tag,[(link rel="stylesheet" href="css file")]<br><br>
+        <b><u>Example:</u></b><br><br>
+        This example shows the different values given to border style and its output.<br><br><br>
+       <center> <img src="https://i.ytimg.com/vi/vEtu72rkzaU/maxresdefault.jpg" width="800" height="400"></center>

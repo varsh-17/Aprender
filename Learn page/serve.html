@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head><title>CSS-Learn from aprender</title></head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Festive&display=swap" rel="stylesheet">
+
+<style>
+    body {margin:0;
+        background-color: #edc7b7;
+      font-family:Verdana, sans-serif;
+    }
+    
+    ul {
+      list-style-type: none;
+      margin-right:10px;
+      padding:0;
+      overflow: hidden;
+      background-color: #123c69;
+      top: 100px;
+      width: 100%;
+    }
+    .head{
+        text-align: center;
+        background-color: #edc7b7;
+        font-family: 'Festive', cursive;
+        font-size: 35px;
+        padding: 0%;
+        margin-bottom: 0%;
+    }
+    .sidebar {
+  margin: 0;
+  padding: 0;
+  width: 120px;
+  background-color: #123c69;;
+  position: fixed;
+  height:400px;
+  overflow: hidden;
+}
+
+.sidebar a {
+  display: block;
+  color: white;
+  padding: 16px;
+  text-decoration: none;
+}
+ 
+.sidebar a.active {
+  background-color: #ac3b61;
+  color: white;
+}
+
+.sidebar a:hover:not(.active) {
+  background-color: #111;
+  color: white;
+}
+
+div.content {
+  margin-left: 200px;
+  margin-right: 100px;
+  padding: 1px 16px;
+  height: fit-content;
+  padding-bottom: 100px;
+}
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: fixed;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+}
+
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+    position: fixed;
+  }
+}
+    
+    
+    li {
+      float:left;
+    }
+    
+    li a {
+        
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+    
+    li a:hover:not(.active) {
+      background-color: #111;
+    }
+    
+    .active {
+      background-color:#ac3b61;
+    }
+    
+    </style>
+    <body>
+    <div class="head">
+        <h1>Aprender</h1></div>
+   
+
+<ul>
+  
+  <li><a href="index.html">Home</a></li>
+  <li><a class="active"href="learn.html">Learn</a></li>
+  <li><a href="books.html">Books</a></li>
+  <li><a href="work.html">Work out</a></li>
+   <li><a href="exercise.html">Exercise</a></li>
+   <li><a href="login.jsp">Quiz</a></li>
+   <li><a href="feedback.html">Rate</a></li>
+  
+</ul>
+<div class="sidebar">
+    <a  href="learn.html">HTML</a>
+    <a href="learncss.html">CSS</a>
+    <a href="learnjs.html">JavaScript</a>
+    <a class="active" href="serve.html">Servelets</a>
+    <a href="jsp.html">JSP</a>
+    <a  href="jdbc.html">JDBC</a>
+    <a href="compiler.html">Compiler</a>
+
+  </div>
+  <div class="content" style="background-color: #eee2dc;">
+    <p><b><u>SERVELETS</u></b><br><br>
+        What are Servlets?<br><br>
+        Java Servlets are programs that run on a Web or Application server and act as a middle layer between a requests coming from a Web browser or other HTTP client and databases or applications on the HTTP server.<br><br>
+        
+        Using Servlets, you can collect input from users through web page forms, present records from a database or another source, and create web pages dynamically.<br><br>
+        
+        Java Servlets often serve the same purpose as programs implemented using the Common Gateway Interface (CGI). But Servlets offer several advantages in comparison with the CGI.<br><br>
+        
+        Performance is significantly better.<br><br>
+        
+        Servlets execute within the address space of a Web server. It is not necessary to create a separate process to handle each client request.<br><br>
+        
+        Servlets are platform-independent because they are written in Java.<br><br>
+        
+        Java security manager on the server enforces a set of restrictions to protect the resources on a server machine. So servlets are trusted.<br><br>
+        
+        The full functionality of the Java class libraries is available to a servlet. It can communicate with applets, databases, or other software via the sockets and RMI mechanisms that you have seen already.<br><br>
+        
+        <b><u>Servlets Architecture</u></b><br><br>
+        The following diagram shows the position of Servlets in a Web Application.<br><br>
+        <img src="https://www.tutorialspoint.com/servlets/images/servlet-arch.jpg" width="400" height="300"><br><br>
+      <b>  Servlets Tasks</b><br><br>
+        Servlets perform the following major tasks −
+        
+        Read the explicit data sent by the clients (browsers). This includes an HTML form on a Web page or it could also come from an applet or a custom HTTP client program.<br><br>
+        
+        Read the implicit HTTP request data sent by the clients (browsers). This includes cookies, media types and compression schemes the browser understands, and so forth.<br><br>
+        
+        Process the data and generate the results. This process may require talking to a database, executing an RMI or CORBA call, invoking a Web service, or computing the response directly.<br><br>
+        
+        Send the explicit data (i.e., the document) to the clients (browsers). This document can be sent in a variety of formats, including text (HTML or XML), binary (GIF images), Excel, etc.<br><br>
+        
+        Send the implicit HTTP response to the clients (browsers). This includes telling the browsers or other clients what type of document is being returned (e.g., HTML), setting cookies and caching parameters, and other such tasks.<br><br>
+        
+        <b>Servlets Packages</b> <br><br>
+        Java Servlets are Java classes run by a web server that has an interpreter that supports the Java Servlet specification.<br><br>
+        
+        Servlets can be created using the javax.servlet and javax.servlet.http packages, which are a standard part of the Java's enterprise edition, an expanded version of the Java class library that supports large-scale development projects.<br><br>
+        
+        These classes implement the Java Servlet and JSP specifications. At the time of writing this tutorial, the versions are Java Servlet 2.5 and JSP 2.1.<br><br>
+        
+        Java servlets have been created and compiled just like any other Java class. After you install the servlet packages and add them to your computer's Classpath, you can compile servlets with the JDK's Java compiler or any other current compiler.<br><br></p>

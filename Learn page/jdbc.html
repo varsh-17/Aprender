@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head><title>Learn from aprender</title></head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Festive&display=swap" rel="stylesheet">
+
+<style>
+    body {margin:0;
+        background-color: #edc7b7;
+      font-family:Verdana, sans-serif;
+    }
+    
+    ul {
+      list-style-type: none;
+      margin-right:10px;
+      padding:0;
+      overflow: hidden;
+      background-color: #123c69;
+      top: 100px;
+      width: 100%;
+    }
+    .head{
+        text-align: center;
+        background-color: #edc7b7;
+        font-family: 'Festive', cursive;
+        font-size: 35px;
+        padding: 0%;
+        margin-bottom: 0%;
+    }
+    .sidebar {
+  margin: 0;
+  padding: 0;
+  width: 120px;
+  background-color: #123c69;;
+  position: fixed;
+  height:400px;
+  overflow: hidden;
+}
+
+.sidebar a {
+  display: block;
+  color: white;
+  padding: 16px;
+  text-decoration: none;
+}
+ 
+.sidebar a.active {
+  background-color: #ac3b61;
+  color: white;
+}
+
+.sidebar a:hover:not(.active) {
+  background-color: #111;
+  color: white;
+}
+
+div.content {
+  margin-left: 200px;
+  margin-right: 100px;
+  padding: 1px 16px;
+  height: fit-content;
+  padding-bottom: 100px;
+}
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: fixed;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+}
+
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+    position: fixed;
+  }
+}
+    
+    
+    li {
+      float:left;
+    }
+    br{
+        padding: 70px;
+    }
+    li a {
+        
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+    
+    li a:hover:not(.active) {
+      background-color: #111;
+    }
+    
+    .active {
+      background-color:#ac3b61;
+    }
+    
+    </style>
+    <body>
+    <div class="head">
+        <h1>Aprender</h1></div>
+   
+
+<ul>
+  
+  <li><a href="index.html">Home</a></li>
+  <li><a class="active"href="learn.html">Learn</a></li>
+  <li><a href="books.html">Books</a></li>
+  <li><a href="work.html">Work out</a></li>
+   <li><a href="exercise.html">Exercise</a></li>
+   <li><a href="login.jsp">Quiz</a></li>
+   <li><a href="feedback.html">Rate</a></li>
+  
+</ul>
+<div class="sidebar">
+    <a  href="learn.html">HTML</a>
+    <a href="learncss.html">CSS</a>
+    <a href="learnjs.html">JavaScript</a>
+    <a href="serve.html">Servelets</a>
+    <a href="jsp.html">JSP</a>
+    <a class="active" href="jdbc.html">JDBC</a>
+    <a href="compiler.html">Compiler</a>
+
+  </div>
+  <div class="content" style="background-color: #eee2dc;">
+    <h3>JDBC Basics</h3>
+    <p>There are 5 steps to connect any java application with the database using JDBC. These steps are as follows:<br>
+        Register the Driver class<br>
+        Create connection<br>
+        Create statement<br>
+        Execute queries<br>
+        Close connection<br><br>
+        <b><u>1) Register the driver class</u></b><br>
+        The forName() method of Class class is used to register the driver class. This method is used to dynamically load the driver class.<br>
+        Syntax of forName() method<br>
+        public static void forName(String className)throws ClassNotFoundException<br>  
+        Note: Since JDBC 4.0, explicitly registering the driver is optional. We just need to put vender's Jar in the classpath, and then JDBC driver manager can detect and load the driver automatically.
+        Example to register the OracleDriver class<br>
+        Here, Java program is loading oracle driver to esteblish database connection.<br>
+        
+        Class.forName("oracle.jdbc.driver.OracleDriver"); <br><br> 
+        
+         
+       <b><u> 2) Create the connection object</u></b><br>
+        The getConnection() method of DriverManager class is used to establish connection with the database.
+        Syntax of getConnection() method<br>
+        1) public static Connection getConnection(String url)throws SQLException <br> 
+        2) public static Connection getConnection(String url,String name,String password)  
+        throws SQLException<br><br>
+        Example to establish connection with the Oracle database<br>
+        Connection con=DriverManager.getConnection(  
+        "jdbc:oracle:thin:@localhost:1521:xe","system","password");  <br><br>
+
+        <b><u>3) Create the Statement object</u></b><br>
+        The createStatement() method of Connection interface is used to create statement. The object of statement is responsible to execute queries with the database.<br>
+        Syntax of createStatement() method<br>
+        public Statement createStatement()throws SQLException <br> 
+        Example to create the statement object<br>
+        Statement stmt=con.createStatement(); <br><br>
+
+       <b><u> 4) Execute the query</u></b><br>
+        The executeQuery() method of Statement interface is used to execute queries to the database. This method returns the object of ResultSet that can be used to get all the records of a table.<br>
+        Syntax of executeQuery() method<br>
+        public ResultSet executeQuery(String sql)throws SQLException <br> 
+        Example to execute query<br>
+        ResultSet rs=stmt.executeQuery("select * from emp");<br>  
+          
+        while(rs.next()){  <br>
+        System.out.println(rs.getInt(1)+" "+rs.getString(2));<br>  <br>
+        
+       <b><u>5) Close the connection object</u></b> <br>
+        By closing connection object statement and ResultSet will be closed automatically. The close() method of Connection interface is used to close the connection.
+        Syntax of close() method<br>
+        public void close()throws SQLException<br>  
+        Example to close connection<br>
+        con.close();  <br>
+        </p>

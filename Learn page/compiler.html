@@ -1,0 +1,201 @@
+<!doctype hrml>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Festive&display=swap" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<style>
+body {margin:0;
+    background-color: #edc7b7;
+  font-family:Verdana, sans-serif;
+}
+
+ul {
+  list-style-type: none;
+  margin-right:10px;
+  padding:0;
+  overflow: hidden;
+  background-color: #123c69;
+  top: 100px;
+  width: 100%;
+}
+.head{
+    text-align: center;
+    background-color: #edc7b7;
+    font-family: 'Festive', cursive;
+    font-size: 35px;
+    padding: 0%;
+    margin-bottom: 0%;
+}
+.h1{
+    text-align: center;
+    background-color: #edc7b7;
+    font-family: 'Festive', cursive;
+    font-size: 35px;
+    padding: 0%;
+    margin-bottom: 0%;
+}
+
+li {
+  float:left;
+}
+
+li a {
+    
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+
+.active {
+  background-color: #AC3B61;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+.foot{
+
+  margin-top: 30px;
+  
+}
+.cont{
+  margin-top:20px;
+  position: inherit;
+  padding-bottom: 50px;
+}
+br { display: none; }
+ textarea{display: block;margin: 10px; padding:20px; width:60%; border: 1px solid #333; background-color:beige;}
+ 
+ iframe{display: block;margin: 10px ;padding:20px; width:60%; resize:both; overflow: auto;background-color:beige; border: 1px solid #333;}
+ .sidebar {
+  margin: 0;
+  padding: 0;
+  width: 120px;
+  background-color: #123c69;;
+  position: fixed;
+  height:300px;
+  overflow: hidden;
+}
+
+.sidebar a {
+  display: block;
+  color: white;
+  padding: 16px;
+  text-decoration: none;
+}
+ 
+.sidebar a.active {
+  background-color: #ac3b61;
+  color: white;
+}
+
+.sidebar a:hover:not(.active) {
+  background-color: #111;
+  color: white;
+}
+
+div.content {
+  margin-left: 200px;
+  margin-right: 100px;
+  padding: 1px 16px;
+  height: fit-content;
+  padding-bottom: 100px;
+}
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: fixed;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+}
+
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+    position: fixed;
+  }
+}
+    
+
+</style>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+</head>
+<body><center>
+    <div class="head">
+        <h1>Aprender</h1></div>
+   
+
+<ul>
+  
+  <li><a href="index.html">Home</a></li>
+  <li><a class="active"href="learn.html">Learn</a></li>
+  <li><a href="books.html">Books</a></li>
+  <li><a href="work.html">Work out</a></li>
+   <li><a href="exercise.html">Exercise</a></li>
+   <li><a href="login.jsp">Quiz</a></li>
+   <li><a href="feedback.html">Rate</a></li>
+  
+</ul>
+<div class="sidebar">
+    <a  href="learn.html">HTML</a>
+    <a href="learncss.html">CSS</a>
+    <a href="learnjs.html">JavaScript</a>
+    <a href="serve.html">Servelets</a>
+    <a href="jsp.html">JSP</a>
+    <a href="jdbc.html">JDBC</a>
+    <a class="active"  href="compiler.html">Compiler</a>
+</div>
+
+
+<style type="text/css">
+br { display: none; }
+ textarea{display: block;margin: 10px 0; width:50%; border: 1px solid #333;}
+ 
+ iframe{display: block;margin: 10px 0; width:50%; resize:both; overflow: auto; border: 1px solid #333;}
+</style>
+
+<script type="text/javascript">
+ function updateIframe(){
+ var myFrame = $("#myframe").contents().find('body');
+ var textareaValue = $("textarea").val();
+ myFrame.html(textareaValue);
+ }
+</script>
+<h1>TRY WRITING YOUR OWN HTML CODES</h1>
+
+<textarea rows="5" cols="50" placeholder="Type HTML Code Here"></textarea>
+
+<button style="border:1" type="button" onclick="updateIframe()"><i class="fa fa-pencil-square-o"></i>Run The Code</button>
+
+<iframe id="myframe"></iframe>
+</center>

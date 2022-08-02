@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head><title>CSS-Learn from aprender</title></head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Festive&display=swap" rel="stylesheet">
+
+<style>
+    body {margin:0;
+        background-color: #edc7b7;
+      font-family:Verdana, sans-serif;
+    }
+    
+    ul {
+      list-style-type: none;
+      margin-right:10px;
+      padding:0;
+      overflow: hidden;
+      background-color: #123c69;
+      top: 100px;
+      width: 100%;
+    }
+    .head{
+        text-align: center;
+        background-color: #edc7b7;
+        font-family: 'Festive', cursive;
+        font-size: 35px;
+        padding: 0%;
+        margin-bottom: 0%;
+    }
+    .sidebar {
+  margin: 0;
+  padding: 0;
+  width: 120px;
+  background-color: #123c69;;
+  position: fixed;
+  height:400px;
+  overflow: hidden;
+}
+
+.sidebar a {
+  display: block;
+  color: white;
+  padding: 16px;
+  text-decoration: none;
+}
+ 
+.sidebar a.active {
+  background-color: #ac3b61;
+  color: white;
+}
+
+.sidebar a:hover:not(.active) {
+  background-color: #111;
+  color: white;
+}
+
+div.content {
+  margin-left: 200px;
+  margin-right: 100px;
+  padding: 1px 16px;
+  height: fit-content;
+  padding-bottom: 100px;
+}
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: fixed;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+}
+
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+    position: fixed;
+  }
+}
+    
+    
+    li {
+      float:left;
+    }
+    
+    li a {
+        
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+    
+    li a:hover:not(.active) {
+      background-color: #111;
+    }
+    
+    .active {
+      background-color:#ac3b61;
+    }
+    
+    </style>
+    <body>
+    <div class="head">
+        <h1>Aprender</h1></div>
+   
+
+<ul>
+  
+  <li><a href="index.html">Home</a></li>
+  <li><a class="active"href="learn.html">Learn</a></li>
+  <li><a href="books.html">Books</a></li>
+  <li><a href="work.html">Work out</a></li>
+   <li><a href="exercise.html">Exercise</a></li>
+   <li><a href="login.jsp">Quiz</a></li>
+   <li><a href="feedback.html">Rate</a></li>
+  
+</ul>
+<div class="sidebar">
+    <a  href="learn.html">HTML</a>
+    <a href="learncss.html">CSS</a>
+    <a class="active" href="learnjs.html">JavaScript</a>
+    <a href="serve.html">Servelets</a>
+    <a href="jsp.html">JSP</a>
+    <a  href="jdbc.html">JDBC</a>
+    <a href="compiler.html">Compiler</a>
+
+  </div>
+  <div class="content" style="background-color: #eee2dc;">
+    <p><b><u>JAVASCRIPT</u></b><br><br>
+        JavaScript is the world's most popular programming language.<br><br>
+
+        JavaScript is the programming language of the Web.<br><br>
+        
+        JavaScript is easy to learn<br><br>
+        In HTML, JavaScript code is inserted between &lt;script&gt; and &lt;/script&gt;tags.<br><br>
+        JavaScript Display Possibilities<br><br>
+        JavaScript can "display" data in different ways:<br><br>
+        
+       1. Writing into an HTML element, using innerHTML.<br><br>
+        2.Writing into the HTML output using document.write().<br><br>
+       3.Writing into an alert box, using window.alert().<br><br>
+        4.Writing into the browser console, using console.log().<br><br>
+        <b><u>Applications of Javascript Programming</u></b><br><br>
+As mentioned before, Javascript is one of the most widely used programming languages (Front-end as well as Back-end). It has it's presence in almost every area of software development. I'm going to list few of them here:<br><br>
+
+Client side validation - This is really important to verify any user input before submitting it to the server and Javascript plays an important role in validting those inputs at front-end itself.<br><br>
+
+Manipulating HTML Pages - Javascript helps in manipulating HTML page on the fly. This helps in adding and deleting any HTML tag very easily using javascript and modify your HTML to change its look and feel based on different devices and requirements.<br><br>
+
+User Notifications - You can use Javascript to raise dynamic pop-ups on the webpages to give different types of notifications to your website visitors.<br><br>
+
+Back-end Data Loading - Javascript provides Ajax library which helps in loading back-end data while you are doing some other processing. This really gives an amazing experience to your website visitors.<br><br>
+
+Presentations - JavaScript also provides the facility of creating presentations which gives website look and feel. JavaScript provides RevealJS and BespokeJS libraries to build a web-based slide presentations.<br><br>
+
+Server Applications - Node JS is built on Chrome's Javascript runtime for building fast and scalable network applications. This is an event based library which helps in developing very sophisticated server applications including Web Servers.<br><br>
+
+This list goes on, there are various areas where millions of software developers are happily using Javascript to develop great websites and others softwares.<br><br></p>
