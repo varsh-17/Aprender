@@ -1,0 +1,144 @@
+<!doctype hrml>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Festive&display=swap" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<style>
+body {margin:0;
+    background-color: #edc7b7;
+  font-family:Verdana, sans-serif;
+}
+
+ul {
+  list-style-type: none;
+  margin-right:10px;
+  padding:0;
+  overflow: hidden;
+  background-color: #123c69;
+  top: 100px;
+  width: 100%;
+}
+.head{
+    text-align: center;
+    background-color: #edc7b7;
+    font-family: 'Festive', cursive;
+    font-size: 35px;
+    padding: 0%;
+    margin-bottom: 0%;
+}
+.h1{
+    text-align: center;
+    background-color: #edc7b7;
+    font-family: 'Festive', cursive;
+    font-size: 35px;
+    padding: 0%;
+    margin-bottom: 0%;
+}
+
+li {
+  float:left;
+}
+
+li a {
+    
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+
+.active {
+  background-color: #AC3B61;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+.foot{
+
+  margin-top: 30px;
+  
+}
+.cont{
+  margin-top:20px;
+  position: inherit;
+  padding-bottom: 50px;
+}
+br { display: none; }
+ textarea{display: block;margin: 10px; padding:20px; width:60%; border: 1px solid #333; background-color:beige;}
+ 
+ iframe{display: block;margin: 10px ;padding:20px; width:60%; resize:both; overflow: auto;background-color:beige; border: 1px solid #333;}
+ 
+
+</style>
+</head>
+<body>
+    <div class="head">
+        <h1>Aprender</h1></div>
+   
+
+<ul>
+  
+  <li><a  href="index.html">Home</a></li>
+  <li><a href="learn.html">Learn</a></li>
+  <li><a href="books.html">Books</a></li>
+  <li><a class="active" href="work.html">Work out</a></li>
+   <li><a href="exercise.html">Exercise</a></li>
+   <li><a href="login.jsp">Quiz</a></li>
+   <li><a href="feedback.html">Rate</a></li>
+  
+  
+</ul>
+
+<script type="text/javascript">
+ function updateIframe(){
+ var myFrame = $("#myframe").contents().find('body');
+ var textareaValue = $("textarea").val();
+ myFrame.html(textareaValue);
+ }
+</script>
+<center>
+<p style="padding: 20px;"><b>Q1. Design a HTML webpage that includes a table as described below</b></p><br>
+<p>Expected output:</p>
+<img src="https://developer.mozilla.org/en-US/docs/Learn/HTML/Tables/Basics/numbers-table.png">
+<h3>Type your code</h3>
+<textarea rows="10" cols="40" placeholder="Type HTML Code Here"></textarea>
+
+<button  style="border:1" class="btn" type="button" onclick="updateIframe()"><i class="fa fa-pencil-square-o"></i>Run The Code</button>
+
+<iframe id="myframe"></iframe><br>
+
+<p style="padding: 20px;"><b>Q2. Design a HTML webpage that includes a form as described below</b></p><br>
+<p>Expected output:</p>
+<img src="https://mrwhotheengineer.com/wp-content/uploads/2017/12/screenshot_20171207_143946.png">
+<h3>Type your code</h3>
+<textarea rows="10" cols="40" placeholder="Type HTML Code Here"></textarea>
+
+<button  style="border:1" class="btn" type="button" onclick="updateIframe()"><i class="fa fa-pencil-square-o"></i>Run The Code</button>
+
+<iframe id="myframe"></iframe></center>
